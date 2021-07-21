@@ -21,8 +21,18 @@ public class PersonService implements IPersonService{
 	}
 
 	@Override
-	public Person getPersonById(Integer id) {
+	public Person findPersonById(Integer id) {
 		return personRepository.findById(id).get();
+	}
+
+	@Override
+	public void deletePersonById(Integer id) {
+		personRepository.deleteById(id);
+	}
+
+	@Override
+	public Person savePerson(Person person) {
+		return personRepository.save(person);
 	}
 
 }
